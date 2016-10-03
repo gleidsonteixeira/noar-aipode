@@ -464,6 +464,18 @@
 #aProdutosLista .item{
 	border: 2px solid rgba(0,0,0,.1);
 	margin-bottom: 20px;
+	position: relative;
+}
+#aProdutosLista .item i{
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 24px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #EEE;
 }
 #aProdutosLista h6{
 	background-color: rgba(0,0,0,.1);
@@ -523,6 +535,222 @@
 #aProdutosLista ul.passador li.active a,
 #aProdutosLista ul.passador li:hover a{
 	color: white;
+}
+
+#aPedido{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background-color: rgba(0,0,0,.3);
+	visibility: hidden;
+	opacity: 0;
+}
+#aPedido.active{
+	visibility: visible;
+	opacity: 1;
+}
+#aPedido .content{
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	top: calc(50% - 200px);
+	left: calc(50% - 200px);
+	overflow: auto;
+}
+#aPedido .content h6{
+	padding: 20px 0;
+	margin: 0;
+	border-bottom: 1px solid #EEE;
+}
+#aPedido .content ul li{
+	width: 100%;
+	height: 80px;
+	padding: 10px;
+}
+#aPedido .content ul li:nth-child(even){
+	background-color: rgba(0,0,0,.05);
+}
+#aPedido .content ul li img{
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+}
+#aPedido .content ul li span{
+	width: calc(100% - 100px);
+	height: 60px;
+	display: inline-block;
+	vertical-align: top;
+	line-height: 60px;
+}
+#aPedido .content ul li i{
+	width: 30px;
+	height: 60px;
+	vertical-align: top;
+	line-height: 60px;
+	text-align: center;
+	font-size: 18px;
+}
+#aPedido .content a{
+	width: 200px;
+	height: 40px;
+	margin: 20px auto;
+	display: block;
+	text-align: center;
+	line-height: 40px;
+	font-size: 14px;
+	color: white;
+	position: relative;
+}
+#aPedido .content a::before{
+	content: "";
+	width: 200px;
+	height: 40px;
+	background-color: #cd3168;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+}
+#aPedido .content a b{
+	position: relative;
+	z-index: 2;
+}
+#aPedido .content form{
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	background-color: #222;
+}
+#aPedido .content form.active{
+	visibility: visible;
+	opacity: 1;
+}
+#aPedido .content form .item{
+	width: 250px;
+	height: 40px;
+	margin: 0 auto;
+	position: relative;
+	padding: 0 10px;
+}
+#aPedido .content form .item::before,
+#aPedido .content form button::before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: white;
+	transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+}
+#aPedido .content form button{
+	width: 110px;
+	height: 40px;
+	display: block;
+	position: relative;
+	background-color: transparent;
+	border: 0;
+	font-size: 14px;
+	margin: 20px auto;
+}
+#aPedido .content form button::before{
+	background-color: #cd3168;
+}
+#aPedido .content form input{
+	border: 0;
+	height: 40px;
+	box-shadow: none;
+	position: relative;
+	z-index: 10;
+}
+#aPedido .content form b{
+	width: 100px;
+	text-align: center;
+	display: block;
+	position: relative;
+	padding: 5px 10px;
+	line-height: 20px;
+	margin: 0 auto;
+	margin-bottom: -10px;
+	margin-top: 10px;
+	z-index: 10;
+}
+#aPedido .content form b::before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: #abc849;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: skewX(-20deg);
+	-webkit-transform: skewX(-20deg);
+	-moz-transform: skewX(-20deg);
+	-ms-transform: skewX(-20deg);
+	-o-transform: skewX(-20deg);
+}
+#aPedido .content form b span,
+#aPedido .content form button span{
+	position: relative;
+	z-index: 5;
+}
+
+#aCarrinho{
+	width: 60px;
+	height: 60px;
+	position: fixed;
+	z-index: 999;
+	bottom: 30px;
+	right: 30px;
+}
+#aCarrinho::before{
+	content: "";
+	width: 50px;
+	height: 60px;
+	position: absolute;
+	top: 0;
+	left: 5px;
+	transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+	background-color: #abc849;
+}
+#aCarrinho span{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	background-color: #262a58;
+	border-radius: 10px;
+	text-align: center;
+	line-height: 20px;
+	color: white;
+	font-size: 12px;
+}
+#aCarrinho i{
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 24px;
+	color: #222;
 }
 
 #aSobre{}
@@ -739,8 +967,6 @@
 	#aMenu .logo img{
 		width: 40px;
 	}
-
-
 	#aSobre .content{
 		width: 100%;
 	}
@@ -766,6 +992,12 @@
 	}
 	#aParceiros h2{
 		padding-bottom: 0;
+	}
+	#aPedido .content{
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
 	}
 }
 
