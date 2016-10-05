@@ -536,8 +536,124 @@
 #aProdutosLista ul.passador li:hover a{
 	color: white;
 }
+#aProdutosLista .pedido{
+	margin-bottom: 15px;
+}
+#aProdutosLista .pedido h6{
+	background-color: transparent;
+	font-size: 18px;
+	position: relative;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#aProdutosLista .pedido h6::before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: #EEE;
+	border: 2px solid transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+}
+#aProdutosLista .pedido h6 span{
+	position: relative;
+	z-index: 5;
+}
+#aProdutosLista .pedido:nth-child(even) h6::before{
+	background-color: transparent;
+	border-color: #EEE;
+}
+#aProdutosLista .pedido:hover h6::before{
+	background-color: #262a58;
+	border-color: transparent;
+}
+#aProdutosLista .pedido:hover h6{
+	color: white;
+}
+#aProdutosLista .pedido ul{
+	margin-top: 0;
+	padding: 20px;
+	display: none;
+	border: 2px solid #EEE;
+}
+#aProdutosLista .painel-btn{
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	background-color: transparent;
+	border: 0;
+	position: relative;
+	margin-bottom: 20px;
+}
+#aProdutosLista .painel-btn::before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: #222;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+}
+#aProdutosLista .painel-btn a{
+	position: relative;
+	z-index: 5;
+	color: #b1d237;
+}
+#aProdutosLista .input-field{
+	width: 350px;
+	height: 40px;
+	position: relative;
+	padding: 0 20px;
+	padding-right: 0;
+}
+#aProdutosLista .input-field:before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	border: 1px solid #222;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+}
+#aProdutosLista .input-field input{
+	width: 200px;
+	height: 40px;
+	border: 0;
+	box-shadow: none;
+	position: relative;
+	z-index: 5;
+	float: left;
+}
+#aProdutosLista .input-field .painel-btn{
+	width: 100px;
+	float: right;
+}
+#aProdutosLista form.novo{
+	width: 400px;
+	margin: 0 auto;
+	position: relative;
+	margin-top: 100px;
+}
 
-#aPedido{
+#aPedido,
+#aProduto{
 	width: 100%;
 	height: 100%;
 	position: fixed;
@@ -548,17 +664,23 @@
 	visibility: hidden;
 	opacity: 0;
 }
-#aPedido.active{
+#aPedido.active,
+#aProduto.active{
 	visibility: visible;
 	opacity: 1;
 }
-#aPedido .content{
+#aPedido .content,
+#aProduto .content{
 	width: 400px;
 	height: 400px;
 	position: absolute;
 	top: calc(50% - 200px);
 	left: calc(50% - 200px);
 	overflow: auto;
+}
+#aProduto .content{
+	width: 800px;
+	left: calc(50% - 400px);
 }
 #aPedido .content h6{
 	padding: 20px 0;
@@ -577,6 +699,12 @@
 	width: 60px;
 	height: 60px;
 	display: inline-block;
+}
+#aProduto .content img{
+	width: 400px;
+	height: 400px;
+	position: relative;
+	z-index: 5;
 }
 #aPedido .content ul li span{
 	width: calc(100% - 100px);
@@ -637,15 +765,25 @@
 	visibility: visible;
 	opacity: 1;
 }
-#aPedido .content form .item{
+#aPedido .content form .item,
+#aProdutosLista form.novo .item{
 	width: 250px;
 	height: 40px;
 	margin: 0 auto;
 	position: relative;
 	padding: 0 10px;
 }
+#aProdutosLista form.novo .item{
+	width: 350px;
+	height: 60px;
+	border: 0;
+	padding-right: 20px;
+	padding-left: 20px;
+}
 #aPedido .content form .item::before,
-#aPedido .content form button::before{
+#aPedido .content form button::before,
+#aProdutosLista form.novo .item::before,
+#aProdutosLista form.novo button{
 	content: "";
 	width: 100%;
 	height: 100%;
@@ -659,7 +797,36 @@
     -ms-transform: skewX(-20deg);
     -o-transform: skewX(-20deg);
 }
-#aPedido .content form button{
+#aProduto .content .subcontent{
+	width: 400px;
+	height: 400px;
+	background-color: #EEE;
+	position: absolute;
+	top: 0;
+	right: 0;
+	overflow: auto;
+	padding: 20px;
+}
+#aProduto .content .subcontent i{
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background-color: rgba(0,0,0,.05);
+	font-size: 24px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+#aProduto .content .subcontent i:hover{
+	background-color: rgba(0,0,0,.1);
+}
+
+#aProdutosLista form.novo .item::before{
+	border: 1px solid #222;
+}
+#aPedido .content form button,
+#aProdutosLista form.novo button{
 	width: 110px;
 	height: 40px;
 	display: block;
@@ -669,17 +836,23 @@
 	font-size: 14px;
 	margin: 20px auto;
 }
-#aPedido .content form button::before{
+#aPedido .content form button::before,
+#aProdutosLista form.novo button::before{
 	background-color: #cd3168;
 }
-#aPedido .content form input{
+#aPedido .content form input,
+#aProdutosLista form.novo input{
 	border: 0;
 	height: 40px;
 	box-shadow: none;
 	position: relative;
 	z-index: 10;
 }
-#aPedido .content form b{
+#aProdutosLista form.novo input{
+	height: 60px;
+}
+#aPedido .content form b,
+#aProdutosLista form.novo b{
 	width: 100px;
 	text-align: center;
 	display: block;
@@ -691,7 +864,8 @@
 	margin-top: 10px;
 	z-index: 10;
 }
-#aPedido .content form b::before{
+#aPedido .content form b::before,
+#aProdutosLista form.novo b::before{
 	content: "";
 	width: 100%;
 	height: 100%;
@@ -706,9 +880,23 @@
 	-o-transform: skewX(-20deg);
 }
 #aPedido .content form b span,
-#aPedido .content form button span{
+#aPedido .content form button span,
+#aProdutosLista form.novo b span,
+#aProdutosLista form.novo button span{
 	position: relative;
 	z-index: 5;
+}
+#aProdutosLista form.novo .btn{
+	width: 100px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+#aProduto button{
+	width: 200px;
+	height: 40px;
+	border: 0;
 }
 
 #aCarrinho{
@@ -829,7 +1017,11 @@
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
-#aParceiros img{}
+
+#aPainel{
+	margin-top: 120px;
+	border: 1px solid red;
+}
 
 #aRodape{
 	background-color: #222;

@@ -10,6 +10,8 @@ $(document).ready(function(){
 	aBanner();
 	aProdutos();
 	aCarrinho();
+	pedido();
+	produto();
 })
 $(window).resize(function(){
 	aProdutos();	
@@ -58,5 +60,19 @@ function aCarrinho(){
 	})
 	$("#aPedido form p").click(function(){
 		$("#aPedido form").removeClass("active");
+	})
+}
+function pedido(){
+	$("#aProdutosLista .pedido").click(function(){
+		$("#aProdutosLista .pedido ul").slideUp("fast");
+		$(this).find("ul").slideDown("fast");
+	})
+}
+function produto(){
+	$("#aProduto .subcontent i").click(function(){
+		$("#aProduto").removeClass("active");
+	})
+	$("#aProdutosLista .item").click(function(){
+		$("#aProduto").addClass("active");
 	})
 }
